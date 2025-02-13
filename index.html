@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <meta name="description" content="Developer Portfolio" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/styles.css">
+    
+  </head>
+  <body>
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="container">
+          <div class="hero-grid">
+            <!-- Profile Section -->
+            <div class="profile-section">
+              <div class="profile-image">
+                <img src="https://avatars.githubusercontent.com/u/49408799" alt="Profile Picture" />
+              </div>
+              <div class="social-links">
+                <a href="https://github.com/Guazzihub" class="social-link" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                </a>
+                <a href="https://linkedin.com/in/mguazzilopes/" class="social-link" target="_blank">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+              </div>
+            </div>
+            
+            <!-- Techs Section -->
+            <div class="tech-stack-section">
+              <div class="tech-category">
+                <h3>Frontend</h3>
+                <div class="tech-badges">
+                  <span class="tech-badge frontend">HTML</span>
+                  <span class="tech-badge frontend">CSS</span>
+                  <span class="tech-badge frontend">JavaScript</span>
+                  <span class="tech-badge frontend">Jquery</span>
+                  <span class="tech-badge frontend">Bootstrap</span>
+                  <span class="tech-badge frontend">Tailwind CSS</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <h3>Backend</h3>
+                <div class="tech-badges">
+                  <span class="tech-badge backend">Node.js</span>
+                  <span class="tech-badge backend">Express.js</span>
+                  <span class="tech-badge backend">Python</span>
+                  <span class="tech-badge backend">SQL</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <h3>Databases</h3>
+                <div class="tech-badges">
+                  <span class="tech-badge database">MySQL</span>
+                  <span class="tech-badge database">PostgreSQL</span>
+                  <span class="tech-badge database">MongoDB</span>
+                  <span class="tech-badge database">Supabase</span>
+                </div>
+              </div>
+              <div class="tech-category">
+                <h3>Tools</h3>
+                <div class="tech-badges">
+                  <span class="tech-badge tool">VS Code</span>
+                  <span class="tech-badge tool">Git</span>
+                  <span class="tech-badge tool">Yarn</span>
+                  <span class="tech-badge tool">Docker</span>
+                  <span class="tech-badge tool">Wordpress</span>
+                  <span class="tech-badge tool">N8N</span>
+                  <span class="tech-badge tool">Postman</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="section projects">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="carousel-container">
+            <div id="projectsCarousel" class="projects-carousel">
+            </div>
+          </div>
+        </div>
+      </section>
+
+     <!-- Expertise Section -->
+    <section id="expertise" class="expertise-section">
+      <div class="container">
+        <h2 class="section-title">Expertise</h2>
+        <div class="expertise-grid">
+          <div class="expertise-card frontend-card">
+            <h3>Frontend</h3>
+            <div class="expertise-item">
+              <span>HTML</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>CSS</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>JavaScript</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>jQuery</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Bootstrap</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Tailwind CSS</span>
+              <div class="progress-bar">
+                <div class="progress frontend-progress" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="expertise-card backend-card">
+            <h3>Backend</h3>
+            <div class="expertise-item">
+              <span>Node.js</span>
+              <div class="progress-bar">
+                <div class="progress backend-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Express.js</span>
+              <div class="progress-bar">
+                <div class="progress backend-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Python</span>
+              <div class="progress-bar">
+                <div class="progress backend-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>SQL</span>
+              <div class="progress-bar">
+                <div class="progress backend-progress" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="expertise-card database-card">
+            <h3>Databases</h3>
+            <div class="expertise-item">
+              <span>MySQL</span>
+              <div class="progress-bar">
+                <div class="progress database-progress" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>PostgreSQL</span>
+              <div class="progress-bar">
+                <div class="progress database-progress" style="width: 60%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>MongoDB</span>
+              <div class="progress-bar">
+                <div class="progress database-progress" style="width: 50%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Supabase</span>
+              <div class="progress-bar">
+                <div class="progress database-progress" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="expertise-card tool-card">
+            <h3>Tools</h3>
+            <div class="expertise-item">
+              <span>Git</span>
+              <div class="progress-bar">
+                <div class="progress tool-progress" style="width: 65%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Docker</span>
+              <div class="progress-bar">
+                <div class="progress tool-progress" style="width: 70%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Wordpress</span>
+              <div class="progress-bar">
+                <div class="progress tool-progress" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>N8N</span>
+              <div class="progress-bar">
+                <div class="progress tool-progress" style="width: 80%"></div>
+              </div>
+            </div>
+            <div class="expertise-item">
+              <span>Postman</span>
+              <div class="progress-bar">
+                <div class="progress tool-progress" style="width: 60%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </main>
+    <script src="src/scripts.js" type="module"></script>
+  </body>
+</html>
