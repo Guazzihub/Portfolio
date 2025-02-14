@@ -1,8 +1,10 @@
 {
     "keywords": [
-      "Full-Stack",
-      "JQuery",
-      "Tailwind CSS",
-      "API"
-    ]
-  }
+        "Full-Stack",
+        "JQuery",
+        "Tailwind CSS",
+        "API",
+        "Github Actions",
+        "Github Pages"
+        ]
+}
