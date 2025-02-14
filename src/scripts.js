@@ -162,7 +162,7 @@ function createTechBadges(languages, dependencies) {
 function categorizeTech(tech) {
   const categories = {
     frontend: ['Front-end', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'React', 'Vue', 'Angular', 'Next.js', 'Tailwind', 'Tailwind CSS', 'Bootstrap', 'Github Pages', 'Responsive', 'JQuery'],
-    backend: ['Full-Stack', 'SQL', 'Back-end', 'Python', 'Java', 'Ruby', 'PHP', 'Node.js', 'Express', 'Django', 'Flask', 'EJS','Dotenv', 'API', 'Github Actions'],
+    backend: ['Full-Stack', 'Axios', 'SQL', 'Back-end', 'Python', 'Java', 'Ruby', 'PHP', 'Node.js', 'Express', 'Django', 'Flask', 'EJS','Dotenv', 'API', 'Github Actions'],
     database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Mongoose', 'Supabase', 'Firebase'],
     tool: ['Webpack', 'Babel', 'ESLint', 'Prettier', 'Docker', 'Kubernetes','Wordpress', 'Yarn', 'Chocolatey', 'Slack', 'Postman', 'N8N', 'Webhook', 'pip', 'npm', 'Whisper', 'BeautifulSoup', 'Power BI']
   };
