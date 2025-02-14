@@ -1,6 +1,6 @@
 const GITHUB_USERNAME = 'Guazzihub';
 
-// Função auxiliar para requisições autenticadas
+// Authenticated requests
 async function authenticatedFetch(url) {
   try {
     const token = typeof API_TOKEN !== 'undefined' ? API_TOKEN : null;
@@ -16,17 +16,17 @@ async function authenticatedFetch(url) {
     const response = await fetch(url, { headers });
     
     if (!response.ok && response.status === 403) {
-      console.warn('Rate limit atingido. Considere usar um token de autenticação.');
+      console.warn('Rate limit reached. Consider using an authentication token.');
     }
     
     return response;
   } catch (error) {
-    console.error('Erro na autenticação:', error);
+    console.error('Authentication error:', error);
     return fetch(url);
   }
 }
 
-// Funções de inicialização do carrossel
+// Carousel functions
 function initCarousel() {
   const $carousel = $('.projects-carousel');
   const $container = $('.carousel-container');
@@ -48,12 +48,12 @@ function initCarousel() {
 
   function calculateCardWidth() {
     const containerWidth = $('.carousel-container').width();
-    const gap = 24; // espaço entre cards
+    const gap = 24; // gap between cards
     
     if (containerWidth >= 1200) {
-      return (containerWidth - (2 * gap)) / 3; // 3 cards em telas grandes
+      return (containerWidth - (2 * gap)) / 3; // 3 cards on large screens
     } else if (containerWidth >= 768) {
-      return (containerWidth - gap) / 2; // 2 cards em telas médias
+      return (containerWidth - gap) / 2; // 2 cards on medium screens
     }
     return containerWidth;
   }
@@ -68,11 +68,11 @@ function initCarousel() {
     
     $cards.css('width', `${cardWidth}px`);
       
-    // Calcula a posição máxima considerando o número exato de cards visíveis
+    // Calculate maximum position considering the number of visible cards
     const visibleWidth = containerWidth - 96;
     const maxPosition = -(totalWidth - visibleWidth);
 
-    // Garante que a posição atual está dentro dos limites
+    // Ensure current position is within limits
     if (currentPosition < maxPosition) {
       currentPosition = maxPosition;
     }
@@ -80,10 +80,10 @@ function initCarousel() {
       currentPosition = 0;
     }
 
-    // Atualiza posição do carrossel
+    // Update carousel position
     $carousel.css('transform', `translateX(${currentPosition}px)`);
     
-    // Atualiza estado dos botões
+    // Update button states
     $('#prevBtn').prop('disabled', currentPosition >= 0);
     $('#nextBtn').prop('disabled', currentPosition <= maxPosition);
   }
@@ -105,11 +105,11 @@ function initCarousel() {
     updateCarousel();
   });
 
-  // Inicializa o carrossel
+  // Initialize carousel
   updateCarousel();
 }
 
-// Funções de integração com GitHub
+// GitHub integration functions
 async function fetchRepoDetails(repoName) {
   try {
     const languagesResponse = await authenticatedFetch(
@@ -161,8 +161,8 @@ function createTechBadges(languages, dependencies) {
 
 function categorizeTech(tech) {
   const categories = {
-    frontend: ['Front-end', 'Data Analysis', 'Data Visualization', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'React', 'Vue', 'Angular', 'Next.js', 'Tailwind', 'Tailwind CSS', 'Bootstrap', 'Github Pages', 'Responsive', 'JQuery'],
-    backend: ['Full-Stack', 'Axios', 'SQL', 'Back-end', 'Python', 'Java', 'Ruby', 'PHP', 'Node.js', 'Express', 'Django', 'Flask', 'EJS','Dotenv', 'API', 'Github Actions'],
+    frontend: ['Front-end', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'React', 'Vue', 'Angular', 'Next.js', 'Tailwind', 'Tailwind CSS', 'Bootstrap', 'Github Pages', 'Responsive', 'JQuery'],
+    backend: ['Full-Stack', 'SQL', 'Back-end', 'Python', 'Java', 'Ruby', 'PHP', 'Node.js', 'Express', 'Django', 'Flask', 'EJS','Dotenv', 'API', 'Github Actions'],
     database: ['MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Mongoose', 'Supabase', 'Firebase'],
     tool: ['Webpack', 'Babel', 'ESLint', 'Prettier', 'Docker', 'Kubernetes','Wordpress', 'Yarn', 'Chocolatey', 'Slack', 'Postman', 'N8N', 'Webhook', 'pip', 'npm', 'Whisper', 'BeautifulSoup', 'Power BI']
   };
@@ -182,7 +182,7 @@ function createProjectCard(project, details) {
       <div class="project-content">
         <div>
           <h3 class="project-title">${project.name}</h3>
-          <p class="project-description">${project.description || 'Sem descrição disponível'}</p>
+          <p class="project-description">${project.description || 'Description not found'}</p>
         </div>
         <div class="tech-badges">
           ${createTechBadges(details.languages, details.dependencies)}
@@ -214,7 +214,7 @@ async function initPortfolio() {
     
     const carousel = document.getElementById('projectsCarousel');
     if (!projects.length) {
-      carousel.innerHTML = '<p class="text-center">Nenhum projeto encontrado.</p>';
+      carousel.innerHTML = '<p class="text-center">No projects were found.</p>';
       return;
     }
         
@@ -234,11 +234,11 @@ async function initPortfolio() {
     
     initCarousel();
   } catch (error) {
-    console.error('Erro ao carregar projetos:', error);
+    console.error('Failed to load projects:', error);
     const carousel = document.getElementById('projectsCarousel');
-    carousel.innerHTML = '<p class="text-center">Erro ao carregar projetos.</p>';
+    carousel.innerHTML = '<p class="text-center">Error while trying to load projects.</p>';
   }
 }
 
-// Inicializa o portfólio quando o documento estiver pronto
+// on load start the script.
 $(document).ready(initPortfolio);
